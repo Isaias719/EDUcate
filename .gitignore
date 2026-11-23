@@ -1,0 +1,21 @@
+# Python / Backend
+backend/venv/
+backend/.venv/
+backend/__pycache__/
+backend/*.pyc
+backend/.env
+backend/.secret_key
+backend/educacion.db
+backend/uploads/
+*.db
+
+# Android / Gradle
+.gradle/
+build/
+android/.gradle/
+android/build/
+android/app/build/
+*.iml
+.idea/
+local.properties
+.DS_Store

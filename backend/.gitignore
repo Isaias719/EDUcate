@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.env
+.secret_key
+educacion.db
+uploads/
+venv/
+.venv/
