@@ -239,15 +239,17 @@ _new_columns = [
     "ALTER TABLE assignments ADD COLUMN rubric TEXT",
     "ALTER TABLE assignments ADD COLUMN publish_at DATETIME",
 ]
-with engine.connect() as _conn:
-    for _col_def in _new_columns:
-        try:
-            _conn.execute(text(_col_def))
-            _conn.commit()
-        except Exception:
-            pass
-
-Base.metadata.create_all(engine)
+try:
+    with engine.connect() as _conn:
+        for _col_def in _new_columns:
+            try:
+                _conn.execute(text(_col_def))
+                _conn.commit()
+            except Exception:
+                pass
+    Base.metadata.create_all(engine)
+except Exception as _e:
+    print(f">> Advertencia al conectar con la base de datos: {_e}")
 
 
 # ================================================================ esquemas
